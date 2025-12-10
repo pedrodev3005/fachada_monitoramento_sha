@@ -19,7 +19,9 @@ public:
     }
 
     bool salvar(const Usuario& usuario) override {
-        std::string sql = "INSERT INTO usuarios (nome, cpf) VALUES (...)";
+        std::string sql = "INSERT INTO Usuarios (idUsuario, nome, cpf) VALUES (" + 
+                       std::to_string(usuario.idUsuario) + ", '" + 
+                       usuario.nome + "', '" + usuario.cpf + "')";
         conexaoDB->executarQuery(sql);
         
         Logger::getInstance()->registrarEventoCritico("UsuarioDAOImpl", "Usuario " + usuario.nome + " salvo.");

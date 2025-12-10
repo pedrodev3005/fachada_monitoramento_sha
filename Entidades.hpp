@@ -15,6 +15,10 @@ enum TipoMedidor { ANALOGICO, DIGITAL }; // Para o Subsistema de Dados
 
 // --- ESTRUTURAS DE DADOS (DTOs) ---
 
+struct ConsumoDTO {
+    double totalConsumido = 0.0;
+};
+
 // Usado para o Subsistema de Alerta
 struct AlertaConsumo {
     int idUsuario;
@@ -22,6 +26,7 @@ struct AlertaConsumo {
     double volumeExcedido;
     std::string mensagem;
     CanalAlerta destino;
+    int idSHA;
 };
 
 // Usado para o Subsistema de Dados
